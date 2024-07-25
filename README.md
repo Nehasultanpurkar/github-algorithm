@@ -1,22 +1,29 @@
-# github-algorithm
+# Pathfinding Visualizer
 
-An algorithm visualizer is a tool designed to visually demonstrate the inner workings of algorithms. By graphically representing the steps and data transformations involved, these tools help users understand complex processes such as sorting, searching, and pathfinding. Algorithm visualizers are particularly valuable in educational settings, as they make abstract concepts more concrete, aid in grasping algorithm logic, and enhance learning through interactive exploration. They also assist developers in debugging and optimizing algorithms by providing a clear view of how data is manipulated and processed.
-The objectives of an algorithm visualizer are:
+Welcome to Pathfinding Visualizer! I built this application because I was fascinated by pathfinding algorithms, and I wanted to visualize them in action. I hope that you enjoy playing around with this visualization tool just as much as I enjoyed building it. You can access it here (use Google Chrome!): https://clementmihailescu.github.io/Pathfinding-Visualizer/
 
-    Enhance Understanding: Provide a visual representation of how algorithms work, making complex processes more accessible and easier to comprehend.
+## Meet the Algorithms
 
-    Facilitate Learning: Aid students and learners in grasping fundamental concepts by offering an interactive and engaging way to study algorithms.
+This application supports the following algorithms: 
 
-    Debugging and Optimization: Help developers identify errors and inefficiencies in algorithms by clearly showing the steps and data transformations involved.
+**Dijkstra's Algorithm** (weighted): the father of pathfinding algorithms; guarantees the shortest path
 
-    Demonstrate Algorithm Behavior: Illustrate how different algorithms perform under various conditions, such as varying data sizes or types, to highlight their strengths and weaknesses.
+**A* Search** (weighted): arguably the best pathfinding algorithm; uses heuristics to guarantee the shortest path much faster than Dijkstra's Algorithm
 
-    Encourage Exploration: Allow users to experiment with different algorithms and parameters, fostering a deeper understanding through hands-on experience.
+**Greedy Best-first Search** (weighted): a faster, more heuristic-heavy version of A*; does not guarantee the shortest path
 
-    Visualize Data Structures: Show how data structures like arrays, trees, and graphs are manipulated by algorithms, providing insight into their functioning and interactions.
+**Swarm Algorithm** (weighted): a mixture of Dijkstra's Algorithm and A*; does not guarantee the shortest-path
 
-    Support Educational Tools: Serve as a resource in teaching environments, helping educators explain complex topics and engage students in learning.
+**Convergent Swarm Algorithm** (weighted): the faster, more heuristic-heavy version of Swarm; does not guarantee the shortest path
 
-    Compare Algorithms: Offer a platform for comparing the performance and efficiency of different algorithms, assisting in choosing the best solution for a given problem.
+**Bidirectional Swarm Algorithm** (weighted): Swarm from both sides; does not guarantee the shortest path
 
-In conclusion, algorithm visualizers are invaluable tools that bring clarity to the often complex and abstract world of algorithms. By providing visual, interactive representations, they enhance understanding, facilitate learning, and aid in debugging and optimization. Whether used by students, educators, or developers, these tools offer an engaging and effective way to explore and comprehend algorithmic processes. Their ability to visualize data structures and compare different algorithms makes them an essential resource in both educational and professional settings, helping users gain deeper insights and make informed decisions.
+**Breath-first Search** (unweighted): a great algorithm; guarantees the shortest path
+
+**Depth-first Search** (unweighted): a very bad algorithm for pathfinding; does not guarantee the shortest path
+
+On top of the pathfinding algorithms listed above, I implemented a **Recursive Division** Maze Generation algorithm.
+
+## More about the Swarm Algorithm
+
+The Swarm Algorithm is an algorithm that I - at least presumably so (I was unable to find anything close to it online) - co-developed with a good friend and colleague, Hussein Farah. The algorithm is essentially a mixture of Dijkstra's Algorithm and A* Search; more precisely, while it converges to the target node like A* , it still explores quite a few neighboring nodes surrounding the start node like Dijkstra's. The algorithm differentiates itself from A* through its use of heuristics: it continually updates nodes' distance from the start node while taking into account their estimated distance from the target node. This effectively "balances" the difference in total distance between nodes closer to the start node and nodes closer to the target node, which results in the triangle-like shape of the Swarm Algorithm. We named the algorithm "Swarm" because one of its potential applications could be seen in a video-game where a character must keep track of a boss with high priority (the target node), all the while keeping tracking of neighboring enemies that might be swarming nearby. 
